@@ -1,7 +1,7 @@
 .navbar{
-    background: rgb(30, 30, 30);
-    height: 3rem;
-    padding: 3rem;
+    background: rgb(50, 50, 50);
+    height: 2rem;
+    padding: 1.5rem;
     width: 100vw;
     margin: 0 auto;
     display: flex; /* Make the navbar a flex container */
@@ -17,13 +17,38 @@
     cursor: pointer;
     font-size: large;
     margin: 0;
-
+    position: relative; /* Required for absolute positioning of the underline */
+    text-decoration: none; /* Remove default underline */
 }
 
-.desktopMenuListItem:hover {
-    color: yellow;
-    padding-bottom: 0.5rem;
-    border-bottom: 3px solid yellow;
+.desktopMenuListItem::before {
+  content: ''; /* Create a pseudo-element to act as the underline */
+  position: absolute;
+  left: 0;
+  bottom: -3px; /* Adjust the position of the underline as needed */
+  width: 0%; /* Start with 0 width */
+  height: 4px; /* Adjust the thickness of the underline as needed */
+  background-color: yellow; /* Color of the underline */
+  transition: width 0.3s ease; /* Add transition effect */
+}
+
+.desktopMenuListItem:hover::before {
+  width: 100%; /* Expand the width of the underline on hover */
+}
+
+.desktopMenuListItem::after {
+  content: ''; /* Create a pseudo-element to act as the underline */
+  position: absolute;
+  left: 0;
+  bottom: -3px; /* Adjust the position of the underline as needed */
+  width: 0%; /* Start with 0 width */
+  height: 4px; /* Adjust the thickness of the underline as needed */
+  background-color: yellow; /* Color of the underline */
+  transition: width 0.3s ease; /* Add transition effect */
+}
+
+.desktopMenuListItem:hover::after {
+  width: 100%; /* Expand the width of the underline on hover */
 }
 
 .desktopMenuBtn{
@@ -47,5 +72,7 @@
 .active{
     color: yellow;
     padding-bottom: 0.5rem  ;
-    border-bottom: 3px solid yellow;
+    /* border-bottom: 3px solid yellow; */
+    /* Do I need this? */
 }
+

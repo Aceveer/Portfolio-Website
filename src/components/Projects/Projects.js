@@ -1,16 +1,16 @@
 import React from 'react'
-import './Works.css'
+import './Projects.css'
 
-import Image1 from '../../images/Hero 1.png'
-import Image2 from '../../images/Hero 2.png'
-import Image3 from '../../images/Hero 3.png'
-import Image4 from '../../images/Hero 4.png'
-import Image5 from '../../images/Hero 5.png'
-import Image6 from '../../images/Hero 6.png'
+import Image1 from '../../images/Uni of A Photo.jpg';
+import Image2 from '../../images/Uni of A Photo.jpg';
+import Image3 from '../../images/Uni of A Photo.jpg';
+import Image4 from '../../images/Uni of A Photo.jpg';
+import Image5 from '../../images/Uni of A Photo.jpg';
+import Image6 from '../../images/Uni of A Photo.jpg';
 
 const works = () => {
   return (
-    <section id='works'>
+    <section id='projects'>
         <h2 className='worksTitle'>My Portfolio</h2>
         <span className='worksDesc'> take pride in everything I do</span>
         <div className='worksImgs'>

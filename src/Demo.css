@@ -1,0 +1,35 @@
+.text-slider {
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    white-space: nowrap; /* Prevent text wrapping */
+    animation: slide-text 10s ease-in-out infinite;
+  }
+  
+  .text-slide {
+    animation: slide 10s ease-in-out infinite;
+    display: inline-block;
+    margin-right: 20px; /* Adjust spacing between texts */
+  }
+  
+  @keyframes slide-text {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%); /* Slide entire content by 100% */
+    }
+  }
+  
+  @keyframes slide {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0; /* Hide text in the middle of the animation */
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  

@@ -2,15 +2,15 @@ import React, { useRef, useState } from 'react'
 import './Contact.css'
 import emailjs from '@emailjs/browser';
 
-import C1 from '../../images/Client 1.png'
-import C2 from '../../images/Client 2.png'
-import C3 from '../../images/Client 3.png'
-import C4 from '../../images/Client 4.png'
+import C1 from '../../images/Uni of A Photo.jpg';
+import C2 from '../../images/Uni of A Photo.jpg';
+import C3 from '../../images/Uni of A Photo.jpg';
+import C4 from '../../images/Uni of A Photo.jpg';
 
-import FB from '../../images/Facebook.png'
-import DC from '../../images/Discord.png'
-import LI from '../../images/LinkedIn.png'
-import IG from '../../images/Instagram.png'
+import FB from '../../images/Uni of A Photo.jpg';
+import DC from '../../images/Uni of A Photo.jpg';
+import LI from '../../images/Uni of A Photo.jpg';
+import IG from '../../images/Uni of A Photo.jpg';
 
 const Contact = () => {
 

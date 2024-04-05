@@ -1,60 +1,101 @@
-#intro{
-    height: calc(100vh - 4rem);
-    width: 100vw;
-    max-width: 103rem;
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
-    display: flex;
+    #intro{
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .introContent {
+        width: 100%;
+        font-size: 45px;
+        font-weight: 700;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        animation: fadeIn 1s ease-in-out forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+.hello{
+    font-size: 2.5rem;
+    font-weight: 200;
 }
 
-.introContent{
-    height:100vh;
-    width: 100vh;
-    font-size: 3rem;
+.introName{
+    background: -webkit-linear-gradient(rgb(202, 202, 0), #222222);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.introText{
+    font-weight: 500;
+    text-align: center;
+    opacity: 0; /* Set initial opacity to 0 */
+    animation: fadeIn 1s ease-in-out forwards; /* Define fade-in animation */
+  }
+
+.introPara{
+    font-size: 2.5rem;
+    font-weight: 200;
+}
+
+image-gallery-slide img:hover {
+    /* Adjust styles for hover effect */
+    opacity: 0.7; /* Example: Reduce opacity on hover */
+    filter: brightness(110%); /* Example: Increase brightness on hover */
+    background-color: yellow; /* Set desired background color */
+  }
+
+  .achievements{
+    width: 100%;
+    font-size: 2.5rem;
     font-weight: 700;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: -10vh;
     margin-left: 1rem;
-}
-
-.hello{
-    font-size: 1.75rem;
-    font-weight: 100;
-}
-
-.introName{
-    color: yellow;
-}
-
-.introPara{
-    font-size: medium;
-    font-weight: 200;
-}
-
-.btn{
-    background: white;
-    margin: 0;
-    padding: 0.75rem 1.5rem 0.75rem 0.75rem;
-    border: none;
-    border-radius: 2rem;
-}
-
-.btnImg{
-    object-fit: cover;
-    margin: 0 0.5rem;
-    height: 1rem;
-}
-
-.image-gallery-container {
-    /* ... existing styles */
-    width: 100%; /* Adjust width as needed */
-    margin: 0 auto; /* Center horizontally */
   }
-  
-  .image-gallery-intro {
-    /* ... other styles */
-    max-width: fit-content; /* Shrink to fit text content */
-  }
+
+  .highlights{
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 80px;
+    align-self: center;
+    background: -webkit-linear-gradient(rgb(202, 202, 0), #222222);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.highlightList{
+    font-size: 2.5rem;
+    position: relative;
+    bottom: 100px;
+    margin-left: 40px;
+}
+
+.listItems{
+    padding: 40px 0;
+    color: yellow
+}
+
+.listDesc{
+    color: white;
+}
+
+.url{
+    color:rgb(8, 139, 183)
+}

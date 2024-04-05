@@ -1,9 +1,9 @@
 import React from 'react'
 import './About.css'
 
-import UI from '../../images/UI.jpg'
-import Web from '../../images/Web.jpg'
-import API from '../../images/API.jpg'
+import UI from '../../images/Uni of A Photo.jpg';
+import Web from '../../images/Uni of A Photo.jpg';
+import API from '../../images/Uni of A Photo.jpg';
 
 function About() {
   return (
