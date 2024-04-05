@@ -16,6 +16,7 @@ const EducationItems =[
     },
     {
       organizationName: "PES University",
+      photo: require('../../images/PESU.jpg'),
       role: "Bachelor of Technology in Electronics and Communication",
       duration: "August 2017 - May 2021",
       highlights: [
@@ -25,7 +26,7 @@ const EducationItems =[
         },
         {
             title: "Specialization in VLSI",
-            desc: "For excelling in VLSI related courses",
+            desc: "Obtained for excelling in VLSI related courses",
         },
         {
           title: "CNR Rao Merit Scholarship",

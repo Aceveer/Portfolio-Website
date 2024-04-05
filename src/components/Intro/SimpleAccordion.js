@@ -1,11 +1,22 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import AccordionItemContent from "./AccordionItemContent";
 import WorkItems from "./WorkConstants"; // Import WorkItems from WorkConstants.js
 import EducationItems from "./EducationConstants"; // Import EducationItems from EducationConstants.js
+import HobbyItems from "./HobbyConstants"; // Import EducationItems from EducationConstants.js
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 const AccordionWrapper = styled.div`
   width: 100%;
+  animation: ${fadeIn} 2s ease-in-out;
 `;
 
 const AccordionItem = styled.div`
@@ -58,7 +69,6 @@ const SimpleAccordion = () => {
               subtitle={item.role}
               highlights={item.highlights}
               imageSrc={item.photo}
-              // links = {item.highlights.map( (highlight) => highlight.link)}
             />
           ))}
         </AccordionContent>
@@ -78,6 +88,24 @@ const SimpleAccordion = () => {
            highlights={item.highlights}
            imageSrc={item.photo}
          />
+          ))}
+        </AccordionContent>
+      </AccordionItem>
+
+      <AccordionItem key={3}>
+        <AccordionTitle onClick={() => toggleAccordion(3)} isOpen={activeIndex === 3}>
+          Hobbies
+        </AccordionTitle>
+        <AccordionContent isOpen={activeIndex === 3}>
+          {HobbyItems.map((item, index) => (
+            <AccordionItemContent
+              key={index}
+              title={item.organizationName}
+              duration = {item.duration}
+              subtitle={item.role}
+              highlights={item.highlights}
+              imageSrc={item.photo}
+            />
           ))}
         </AccordionContent>
       </AccordionItem>

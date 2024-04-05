@@ -1,12 +1,12 @@
 import React from 'react'
 import './Projects.css'
 
-import Image1 from '../../images/Uni of A Photo.jpg';
-import Image2 from '../../images/Uni of A Photo.jpg';
-import Image3 from '../../images/Uni of A Photo.jpg';
-import Image4 from '../../images/Uni of A Photo.jpg';
-import Image5 from '../../images/Uni of A Photo.jpg';
-import Image6 from '../../images/Uni of A Photo.jpg';
+import Image1 from '../../images/CSS.png';
+import Image2 from '../../images/CSS.png';
+import Image3 from '../../images/CSS.png';
+import Image4 from '../../images/CSS.png';
+import Image5 from '../../images/CSS.png';
+import Image6 from '../../images/CSS.png';
 
 const works = () => {
   return (

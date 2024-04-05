@@ -33,7 +33,7 @@ const WorkItems =[
     organizationName: "University Library",
     role: "Library Volunteer (Special Collections)",
     duration: "March 2024 - Present",
-    photo: require('../../images/UniLib.gif'),
+    photo: "",
     highlights: [
       {
         title: "Adelaide Connect",
@@ -43,23 +43,6 @@ const WorkItems =[
     ]
   }
 ];
-// {
-//   title: "Mississippi Self Service Portal",
-//   desc: "Led the design of PDF generation, and developed various modules.",
-//   link: "https://www.access.ms.gov/consumer/home",
-//   linkText: "Click here to visit: MS-SSP"
-// },
-// {
-//   title: "Barrel Fuel",
-//   desc: "Partnered with team members to fix defects achieving a successful launch.",
-//   link: "https://www.barrelfuel.com/",
-//   linkText: "Click here to visist: BF"
-// },
-// {
-//   title: "Coursera Professional Certificates",
-//   desc: "Awarded Meta Front-End Developer & Google Data Analytics Certificates"
-// }
-
 
 export default WorkItems;
 

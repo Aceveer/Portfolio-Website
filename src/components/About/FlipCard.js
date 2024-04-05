@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { rgba } from "polished";
 
@@ -8,13 +8,11 @@ const Wrapper = styled.div`
 
 const Card = styled.div`
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   transition: transform 0.6s; /* Add transition for smooth flipping */
   transform-style: preserve-3d; /* Enable 3D transformations */
   margin-bottom: 1rem; /* Add margin to create space between card and text */
-  background-image: url(${require("../../images/Resized.jpg")});
-  background-size: cover;
 `;
 
 const CardFront = styled.div`
@@ -23,7 +21,8 @@ const CardFront = styled.div`
   height: 100%;
   backface-visibility: hidden; /* Hide the backface of the front side */
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
   background: white;
   border-radius: 0.5rem;
@@ -55,43 +54,37 @@ const CardTitle = styled.div`
   color: ${rgba("#090C22", 0.85)};
 `;
 
-const CardSubtitle = styled.div`
-  color: ${rgba("#090C22", 0.57)};
-  font-size: 0.875rem;
-  margin-top: 0.5rem;
+const CardImage = styled.img`
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
 `;
 
-class FlipCard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { isFlipped: false };
-  }
+const FlipCard = ({ frontTitle, frontPhoto, backDesc }) => {
+  const [isFlipped, setIsFlipped] = useState(false);
 
-  handleCardClick = () => {
-    this.setState({ isFlipped: !this.state.isFlipped });
+  const handleCardClick = () => {
+    setIsFlipped(!isFlipped);
   };
 
-  render() {
-    const { isFlipped } = this.state;
-    return (
-      <Wrapper>
-        <Card onClick={this.handleCardClick} style={{ transform: isFlipped ? "rotateY(180deg)" : "rotateY(0)" }}>
-          <CardFront>
-            <CardContent>
-              <CardTitle>Destination</CardTitle>
-              <CardSubtitle>Book your next trip</CardSubtitle>
-            </CardContent>
-          </CardFront>
-          <CardBack>
-            <CardContent>
-              <CardTitle>Back Side</CardTitle>
-              <CardSubtitle>This is the back side of the card</CardSubtitle>
-            </CardContent>
-          </CardBack>
-        </Card>
-      </Wrapper>
-    );
-  }
-}
+  return (
+    <Wrapper>
+      <Card onClick={handleCardClick} style={{ transform: isFlipped ? "rotateY(180deg)" : "rotateY(0)" }}>
+        <CardFront>
+          <CardImage src={frontPhoto} alt={frontTitle} />
+          <CardContent>
+            <CardTitle>{frontTitle}</CardTitle>
+          </CardContent>
+        </CardFront>
+        <CardBack>
+          <CardContent>
+            <CardTitle>{backDesc}</CardTitle>
+          </CardContent>
+        </CardBack>
+      </Card>
+    </Wrapper>
+  );
+};
 
 export default FlipCard;
