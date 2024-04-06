@@ -1,29 +1,27 @@
-import React from 'react'
-import './Projects.css'
+import React from 'react';
+import styled from 'styled-components';
 
-import Image1 from '../../images/CSS.png';
-import Image2 from '../../images/CSS.png';
-import Image3 from '../../images/CSS.png';
-import Image4 from '../../images/CSS.png';
-import Image5 from '../../images/CSS.png';
-import Image6 from '../../images/CSS.png';
+const Wrapper = styled.div`
+  margin-top: 20px;
+  text-align: center;
+`;
 
-const works = () => {
+const Title = styled.h2`
+  color: #fff;
+  font-size: 3rem;
+`;
+
+const Description = styled.p`
+  color: #fff;
+`;
+
+const Projects = () => {
   return (
-    <section id='projects'>
-        <h2 className='worksTitle'>My Portfolio</h2>
-        <span className='worksDesc'> take pride in everything I do</span>
-        <div className='worksImgs'>
-            <img src={Image1} alt='' className='worksImg'/>
-            <img src={Image2} alt='' className='worksImg'/>
-            <img src={Image3} alt='' className='worksImg'/>
-            <img src={Image4} alt='' className='worksImg'/>
-            <img src={Image5} alt='' className='worksImg'/>
-            <img src={Image6} alt='' className='worksImg'/>
-        </div>
-        <button className='worksBtn'>See More</button>
-    </section>
-  )
-}
+    <Wrapper id="projects">
+      <Title>Projects</Title>
+      <Description>Currently under development</Description>
+    </Wrapper>
+  );
+};
 
-export default works
+export default Projects;

@@ -1,79 +1,148 @@
-import React, { useRef, useState } from 'react'
-import './Contact.css'
+import React, { useRef, useState } from 'react';
+import styled, {keyframes} from 'styled-components';
 import emailjs from '@emailjs/browser';
+import Loader from './Loader';
+import Popup from './Popup'; // Import the Popup component
 
-import C1 from '../../images/HTML.png';
-import C2 from '../../images/HTML.png';
-import C3 from '../../images/HTML.png';
-import C4 from '../../images/HTML.png';
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
-import FB from '../../images/HTML.png';
-import DC from '../../images/HTML.png';
-import LI from '../../images/HTML.png';
-import IG from '../../images/HTML.png';
+const Section = styled.section`
+  padding: 20px;
+  animation: ${fadeIn} 2s ease-in-out;
+`;
+
+const Container = styled.div`
+  max-width: 600px;
+  margin: 0 auto;
+`;
+
+const Title = styled.h1`
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+`;
+
+const Description = styled.span`
+  font-size: 16px;
+  color: #666;
+`;
+
+const Form = styled.form`
+  margin-top: 20px;
+`;
+
+const Input = styled.input`
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: white;
+`;
+
+const TextArea = styled.textarea`
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  color: white;
+`;
+
+const Button = styled.button`
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+`;
 
 const Contact = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [msg, setMsg] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const form = useRef();
 
-    const [name,setName] = useState('');
-    const [email,setEmail] = useState('');
-    const [msg,setMsg] = useState('');
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setLoading(true);
 
-    const form = useRef();
+    emailjs
+      .sendForm('service_6gz4b5m', 'template_fynx1qu', form.current, {
+        publicKey: 'tmgeeEwQFpFSnAkVq',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          setLoading(false);
+          setShowPopup(true);
 
-    const sendEmail = (e) => {
-        e.preventDefault();
+          setName('');
+          setEmail('');
+          setMsg('');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          setLoading(false);
+        }
+      );
+  };
 
-        emailjs
-          .sendForm('service_6gz4b5m', 'template_fynx1qu', form.current, {
-            publicKey: 'tmgeeEwQFpFSnAkVq',
-          })
-          .then(
-            () => {
-              console.log('SUCCESS!');
-
-              setName('');
-              setEmail('');
-              setMsg('');
-            },
-            (error) => {
-              console.log('FAILED...', error.text);
-            },
-          );
-
-      };
+  const handleClosePopup = () => {
+    setShowPopup(false);
+  };
 
   return (
-    <section id='contactPage'>
-
-        <div id='clients'>
-            <h1 className='contactPagetitle'>My Clients</h1>
-            <p className='clientDesc'>The companies I had the opportunity working in</p>
-            <div className='clientImgs'>
-                <img src={C1} alt='' className='clientImg'/>
-                <img src={C2} alt='' className='clientImg'/>
-                <img src={C3} alt='' className='clientImg'/>
-                <img src={C4} alt='' className='clientImg'/>
-            </div>
-        </div>
-
+    <Section id='contactPage'>
+      <Container>
         <div id='contact'>
-            <h1 className='contactPagetitle'>Contact Me</h1>
-            <span className='contactDesc'>Please fill out the form to discuss with me</span>
-            <form className='contactForm' ref={form} onSubmit={sendEmail}>
-                <input type="text" className='name' placeholder='Your Name' name="your_name" value={name} onChange={(e) => setName(e.target.value)}/>
-                <input type="email" className='email' placeholder='Your Email' name="your_email" value={email} onChange={(e) => setEmail(e.target.value)}/>
-                <textarea name = 'message' rows='5' placeholder='Your message' className='msg' value={msg} onChange={(e) => setMsg(e.target.value)}/>
-                <button className='submitBtn' type='submit' value='Send'>Submit</button>
-                <div className='links'>
-                    <img src={FB} alt="" className='link'/>
-                    <img src={DC} alt="" className='link'/>
-                    <img src={LI} alt="" className='link'/>
-                    <img src={IG} alt="" className='link'/>
-                </div>
-            </form>
+          <Title className='contactPagetitle'>Contact Me</Title>
+          <Description className='contactDesc'>Please fill out the form to discuss with me</Description>
+          <Form className='contactForm' ref={form} onSubmit={sendEmail}>
+            <Input
+              type="text"
+              className='name'
+              placeholder='Your Name'
+              name="your_name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <Input
+              type="email"
+              className='email'
+              placeholder='Your Email'
+              name="your_email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <TextArea
+              name='message'
+              rows='5'
+              placeholder='Your message'
+              className='msg'
+              value={msg}
+              onChange={(e) => setMsg(e.target.value)}
+            />
+            {loading ? <Loader /> : <Button className='submitBtn' type='submit'>Submit</Button>}
+          </Form>
+          {showPopup && <Popup message="Thank you for your message!" onClose={handleClosePopup} />}
         </div>
-    </section>
-  )
-}
+      </Container>
+    </Section>
+  );
+};
 
-export default Contact
+export default Contact;

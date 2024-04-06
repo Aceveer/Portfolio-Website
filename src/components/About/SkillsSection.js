@@ -1,19 +1,32 @@
 import React from "react";
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 import FlipCard from "./FlipCard";
 import CardItems from "./CardConstants";
+import Carousel from "./Carousel";
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 const SkillsSectionWrapper = styled.div`
   background-color: #222;
   border: 2px solid #444;
   border-radius: 8px;
   padding: 20px;
+  animation: ${fadeIn} 2s ease-in-out;
 `;
 
 const SkillsHeader = styled.h2`
   color: #fff;
   margin-bottom: 10px;
   text-align: center;
+  font-size: 3rem;
+  animation: ${fadeIn} 2s ease-in-out;
 `;
 
 const CardsWrapper = styled.div`
@@ -23,20 +36,15 @@ const CardsWrapper = styled.div`
   gap: 20px; /* Add gap between cards */
 `;
 
-const certifications = [
-  {
-    name: "Certification 1",
-    description: "Description of Certification 1",
-    document: './../../certificates/Google Data Analytics Certificate'
-  },
-  {
-    name: "Certification 2",
-    description: "Description of Certification 2",
-    document: './../../certificates/Meta Front-End Developer Certificate'
-  },
-  // Add more certification objects as needed
-];
 
+const CertificationsHeader = styled.h2`
+  color: #fff;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 3rem;
+  padding-top:20px;
+  animation: ${fadeIn} 2s ease-in-out;
+`;
 
 const SkillsSection = () => {
   return (
@@ -54,6 +62,9 @@ const SkillsSection = () => {
           ))}
         </CardsWrapper>
       </SkillsSectionWrapper>
+
+        <CertificationsHeader>Certifications</CertificationsHeader>
+        <Carousel/>
     </div>
   );
 };

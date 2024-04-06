@@ -34,7 +34,7 @@ const Navbar = () => {
       >
         About
       </Link>
-      <Link
+      {/* <Link
         activeClass="active"
         to="projects"
         spy={true}
@@ -44,6 +44,17 @@ const Navbar = () => {
         className="desktopMenuListItem"
       >
         Projects
+      </Link> */}
+      <Link
+        activeClass="active"
+        to="contact"
+        spy={true}
+        smooth={true}
+        offset={0}
+        duration={500}
+        className="desktopMenuListItem"
+      >
+        Contact Me
       </Link>
       {/* <ToggleButton/> */}
       {/* Let's work on Toggle Later */}

@@ -1,4 +1,5 @@
 import { color } from "framer-motion";
+import { rgb } from "polished";
 import React from "react";
 import styled from "styled-components";
 
@@ -51,7 +52,7 @@ const AccordionItemContent = ({ title,duration, subtitle, highlights, imageSrc, 
             <span style={{fontWeight:"bold"}}>
             {highlight.title ? highlight.title + " - ": ""}
             </span>
-            {highlight.link? <a href={highlight.link} target="_blank" style={{color:"green"}}>{highlight.desc}</a> :highlight.desc}
+            {highlight.link? <a href={highlight.link} target="_blank" style={{color:rgb(255,255,0)}}>{highlight.desc}</a> :highlight.desc}
           </BulletPoint>
         ))}
       </ul>
