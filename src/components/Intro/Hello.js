@@ -25,13 +25,14 @@ const HelloText = styled.div`
 const SubText = styled.div`
   margin-top: 10px;
   color: #yellow;
+  font-size: 1.5rem;
 `;
 
 const Hello = (text1, text2,text3) => {
   return (
     <HelloWrapper>
-      <HelloText>Hey there!</HelloText>
-      <HelloText>My name is Tanveer Akram</HelloText>
+      <HelloText>Hey there,</HelloText>
+      <HelloText>My name is Tanveer Akram!</HelloText>
       <SubText>Thanks for visiting my site!</SubText>
     </HelloWrapper>
   );

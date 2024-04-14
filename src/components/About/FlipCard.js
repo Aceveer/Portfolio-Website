@@ -46,6 +46,7 @@ const CardBack = styled.div`
 
 const CardContent = styled.div`
   text-align: center;
+  padding: 0 1rem;
 `;
 
 const CardTitle = styled.div`

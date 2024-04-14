@@ -52,7 +52,7 @@ const CardItems =[
       {
         frontTitle: "Python",
         frontPhoto: require('./../../images/Python.png'),
-        backDesc: "Utilized Python for data science, mining big data, and statistical machine learning tasks, enabling insights and predictive modeling"
+        backDesc: "Utilized Python for data science tasks, enabling insights and predictive modeling"
       },
       {
         frontTitle: "Google Sheets | Microsoft Excel",

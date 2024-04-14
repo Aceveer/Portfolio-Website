@@ -31,7 +31,7 @@ const Title = styled.h1`
 
 const Description = styled.span`
   font-size: 16px;
-  color: #666;
+  color: #AAA;
 `;
 
 const Form = styled.form`
@@ -59,8 +59,8 @@ const TextArea = styled.textarea`
 `;
 
 const Button = styled.button`
-  background-color: #007bff;
-  color: #fff;
+  background-color: #00FFAA;
+  color: #000;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -110,7 +110,7 @@ const Contact = () => {
       <Container>
         <div id='contact'>
           <Title className='contactPagetitle'>Contact Me</Title>
-          <Description className='contactDesc'>Please fill out the form to discuss with me</Description>
+          <Description className='contactDesc'>Please fill out the form to get in touch with me!</Description>
           <Form className='contactForm' ref={form} onSubmit={sendEmail}>
             <Input
               type="text"

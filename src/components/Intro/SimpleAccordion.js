@@ -31,11 +31,12 @@ const AccordionTitle = styled.button`
   width: 100%;
   padding: 15px;
   text-align: left;
-  background-color: ${(props) => (props.isOpen ? "green" : "#444")}; /* Darker gray background for title */
+  background-color: ${(props) => (props.isOpen ? "#00FFAA" : "#444")}; /* Darker gray background for title */
   border: none;
   cursor: pointer;
   outline: none;
-  color: #fff; /* White text color */
+  font-size: 1.5rem;
+  color: ${(props) => (props.isOpen ? "#000" : "#FFF")};/* White text color */
   transition: background-color 0.5s; /* Transition for background color change */
 `;
 
