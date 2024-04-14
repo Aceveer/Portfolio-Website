@@ -27,8 +27,8 @@ const Message = styled.p`
 `;
 
 const CloseButton = styled.button`
-  background-color: #007bff;
-  color: #fff;
+  background-color: #00ffaa;
+  color: #000;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;

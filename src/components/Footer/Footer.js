@@ -21,12 +21,12 @@ const Footer = () => {
   return (
     <FooterContainer>
       <IconWrapper>
-        <a href="https://www.facebook.com/profile.php?id=100095169572150"><FaFacebookSquare size={24} style={{ marginRight: '10px',  color: '#00FFAA' }} /></a>
-        <a href="https://www.instagram.com/tannuakram/"><FaInstagram size={24} style={{ marginRight: '10px',  color: '#00FFAA' }} /></a>
-        <a href="https://github.com/Aceveer/"><FaGithub size={24} style={{ marginRight: '10px',  color: '#00FFAA' }} /></a>
-        <a href="https://www.linkedin.com/in/tannuakram/"><FaLinkedin size={24} style ={{ color: '#00FFAA'}} /></a>
+        <a href="https://www.facebook.com/profile.php?id=100095169572150" rel="noreferrer" target="_blank"><FaFacebookSquare size={24} style={{ marginRight: '10px',  color: '#00FFAA' }} /></a>
+        <a href="https://www.instagram.com/tannuakram/" rel="noreferrer" target="_blank"><FaInstagram size={24} style={{ marginRight: '10px',  color: '#00FFAA' }} /></a>
+        <a href="https://github.com/Aceveer/" rel="noreferrer" target="_blank"><FaGithub size={24} style={{ marginRight: '10px',  color: '#00FFAA' }} /></a>
+        <a href="https://www.linkedin.com/in/tannuakram/" rel="noreferrer" target="_blank"><FaLinkedin size={24} style ={{ color: '#00FFAA'}} /></a>
       </IconWrapper>
-      <FooterText>All Rights Reserved. Credit to <a href = "https://www.linkedin.com/in/prachi-kapasi-07676629/" style ={{ color: '#00FFAA'}}>Prx</a> for designing, <a href="https://www.linkedin.com/in/frontendjoe/?originalSubdomain=uk" style ={{ color: '#00FFAA'}}>Joe Harrison</a> for his components that helped me design this website</FooterText>
+      <FooterText>All Rights Reserved. Credit to Prx for designing, <a href="https://www.linkedin.com/in/frontendjoe/?originalSubdomain=uk" target="_blank" rel="noreferrer" style ={{ color: '#00FFAA'}}>Joe Harrison</a> for his components that helped me design this website</FooterText>
     </FooterContainer>
   );
 };

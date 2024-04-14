@@ -3,6 +3,7 @@ import styled, {keyframes} from 'styled-components';
 import emailjs from '@emailjs/browser';
 import Loader from './Loader';
 import Popup from './Popup'; // Import the Popup component
+import Resume from './Resume';
 
 const fadeIn = keyframes`
   from {
@@ -24,7 +25,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 24px;
+  font-size: 3rem;
   font-weight: bold;
   margin-bottom: 10px;
 `;
@@ -107,6 +108,7 @@ const Contact = () => {
 
   return (
     <Section id='contactPage'>
+      <Resume/>
       <Container>
         <div id='contact'>
           <Title className='contactPagetitle'>Contact Me</Title>
@@ -138,7 +140,7 @@ const Contact = () => {
             />
             {loading ? <Loader /> : <Button className='submitBtn' type='submit'>Submit</Button>}
           </Form>
-          {showPopup && <Popup message="Thank you for your message!" onClose={handleClosePopup} />}
+          {showPopup && <Popup message="Thank you for reaching out! I will get back to you within 24 hours" onClose={handleClosePopup} />}
         </div>
       </Container>
     </Section>
