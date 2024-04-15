@@ -13,6 +13,9 @@ const Card = styled.div`
   transition: transform 0.6s; /* Add transition for smooth flipping */
   transform-style: preserve-3d; /* Enable 3D transformations */
   margin-bottom: 1rem; /* Add margin to create space between card and text */
+  &:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+  }
 `;
 
 const CardFront = styled.div`
@@ -62,6 +65,23 @@ const CardImage = styled.img`
   margin-bottom: 0.5rem;
 `;
 
+const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s;
+`;
+
 const FlipCard = ({ frontTitle, frontPhoto, backDesc }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -83,6 +103,7 @@ const FlipCard = ({ frontTitle, frontPhoto, backDesc }) => {
             <CardTitle>{backDesc}</CardTitle>
           </CardContent>
         </CardBack>
+        {isFlipped? "" : <Overlay className="overlay">Click on Me</Overlay>}
       </Card>
     </Wrapper>
   );
