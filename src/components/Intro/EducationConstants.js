@@ -1,6 +1,7 @@
 const EducationItems =[
     {
       organizationName: "The University of Adelaide",
+      photo: require('../../images/UniOfA.jpg'),
       role: "Master of Computing and Innovation",
       duration: "July 2023 - July 2025",
       highlights: [

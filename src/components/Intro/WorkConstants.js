@@ -21,7 +21,7 @@ const WorkItems =[
     organizationName: "Rebel Sport",
     role: "Christmas Casual Retail Associate",
     duration: "Oct 2023 - Feb 2024",
-    photo: require('../../images/rebelLogo.png'),
+    photo: require('../../images/download.png'),
     highlights: [
       {
         title: "Rebel Marion",
@@ -33,7 +33,7 @@ const WorkItems =[
     organizationName: "University Library",
     role: "Library Volunteer (Special Collections)",
     duration: "March 2024 - Present",
-    photo: "",
+    photo: require('../../images/UniLib.jpg'),
     highlights: [
       {
         title: "Adelaide Connect",
